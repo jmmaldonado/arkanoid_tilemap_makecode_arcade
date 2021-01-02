@@ -19,21 +19,21 @@ scene.onHitWall(SpriteKind.Projectile, function (sprite, location) {
 })
 function sacar_bola () {
     bola = sprites.create(img`
-        . c c c c . 
-        c c 5 5 c c 
-        c 5 5 5 5 c 
-        c 5 5 5 5 c 
-        c c 5 5 c c 
-        . c c c c . 
+        . d d d d . 
+        d d 5 5 d d 
+        d 5 5 5 5 d 
+        d 5 5 5 5 d 
+        d d 5 5 d d 
+        . d d d d . 
         `, SpriteKind.Projectile)
-    bola.setPosition(80, 85)
+    bola.setPosition(50, 85)
     bola.setVelocity(50, 50)
     bola.setFlag(SpriteFlag.BounceOnWall, true)
 }
 let bola: Sprite = null
 info.setLife(3)
-scene.setBackgroundColor(1)
-tiles.setTilemap(tiles.createTilemap(hex`0a0008000000000000000000000000010101010101010100000101010101010101000001010101010101010000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
+scene.setBackgroundColor(8)
+tiles.setTilemap(tiles.createTilemap(hex`0a0008000504040404040404040602010101010101010103020101010101010101030201010101010101010302000000000000000003020000000000000000030200000000000000000302000000000000000003`, img`
     . . . . . . . . . . 
     . 2 2 2 2 2 2 2 2 . 
     . 2 2 2 2 2 2 2 2 . 
@@ -42,7 +42,7 @@ tiles.setTilemap(tiles.createTilemap(hex`0a0008000000000000000000000000010101010
     . . . . . . . . . . 
     . . . . . . . . . . 
     . . . . . . . . . . 
-    `, [myTiles.transparency16,sprites.builtin.brick], TileScale.Sixteen))
+    `, [myTiles.transparency16,sprites.builtin.brick,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5], TileScale.Sixteen))
 let nave = sprites.create(img`
     . c c b b b b b b b b b b c c . 
     c c c d d d d d d d d d d c c c 
